@@ -9,9 +9,10 @@ public class BoardCreationTests extends TestBase {
    @Test
     public void createBoardFromBoardButton(){
        pathToTheCreatingBoardsForm();
-       fillTheBoardsFormNoTeam("Title1","private");
+       String boardTitle="Title1";
+       fillTheBoardsFormNoTeam(boardTitle,"private");
        click(By.cssSelector("[data-test-id='header-create-board-submit-button']"));
-       Assert.assertTrue(isBoardCreated("Title1"));
+       Assert.assertTrue(isBoardCreated(boardTitle));
     }
 }
 
