@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.trello.qa.TeamCreationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-09-03T23:48:15" hostname="street" time="3.888">
+  <properties/>
+  <testcase name="testTeamCreation" classname="com.trello.qa.TeamCreationTests" time="3.888"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 76.0.3809.126 (d80a294506b4c9d18015e755cee48f953ddc3f2f-refs/branch-heads/3809@{#1024}) on port 25144
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+Using PPAPI flash.
+сен 04, 2019 2:48:09 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>
