@@ -48,7 +48,7 @@ public class TestBase {
         driver.quit();
     }
 
-    protected void pathToTheCreatingBoardsForm() {
+    protected void pathToTheCreatingBoardsFormFromBoardButton() {
         click(By.cssSelector("[data-test-id='header-boards-menu-button']"));
         click(By.cssSelector("[data-test-id='header-boards-menu-create-board']"));
     }
@@ -82,5 +82,24 @@ public class TestBase {
 
     public boolean isBoardCreated(String boardName) {
         return isElementPresent(By.cssSelector(".board-tile-details [title="+boardName+"]"));
+    }
+
+    public int teamsCounter() {
+       return driver.findElements(By.xpath("//*[@class='icon-lg icon-member']/../../..//li")).size();
+    }
+
+    protected void clickCreateBoardBoardSubmitButton() {
+        click(By.cssSelector("[data-test-id='header-create-board-submit-button']"));
+    }
+
+    public void goHomePage() throws InterruptedException {
+        Thread.sleep(10000);
+       click(By.cssSelector("[href='/']"));
+       click(By.cssSelector("[href='/']"));
+       driver.navigate().refresh();
+    }
+
+    protected void clickCancelInTheCreatingBoardForm() {
+        click(By.cssSelector("._1rhhEuk7pUqNV_ [name='close']"));
     }
 }
