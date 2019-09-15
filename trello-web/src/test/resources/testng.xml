@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Regression trello" verbose="1" >
+    <test name="Nopackage" >
+        <classes>
+            <class name="com.trello.qa.BoardCreationTests" />
+            <class name="com.trello.qa.BoardDeletionTest" />
+        </classes>
+    </test>
+</suite>
