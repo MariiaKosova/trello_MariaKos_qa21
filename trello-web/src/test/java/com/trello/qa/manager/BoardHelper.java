@@ -1,10 +1,8 @@
 package com.trello.qa.manager;
 
+import com.trello.qa.model.BoardData;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
 public class BoardHelper extends HalperBase {
     public BoardHelper(WebDriver driver) {
@@ -16,11 +14,17 @@ public class BoardHelper extends HalperBase {
         click(By.cssSelector("[data-test-id='header-boards-menu-create-board']"));
     }
 
-    public void fillTheBoardsFormNoTeam(String title, String status) {
-        type(By.cssSelector("[data-test-id='header-create-board-title-input']"),title);
+    public void createBoardNoTeam(String boardTitle) {
+        fillTheBoardsFormNoTeam(new BoardData().setTitle(boardTitle).setStatus("private"));
+        clickCreateBoardBoardSubmitButton();
+    }
+
+
+    public void fillTheBoardsFormNoTeam(BoardData board) {
+        type(By.cssSelector("[data-test-id='header-create-board-title-input']"), board.getTitle());
         click(By.cssSelector(".W6rMLOx8U0MrPx"));
         click(By.cssSelector("#layer-manager-popover nav li:first-child button"));
-       chooseStatusInTheBoardsFormNoTeam(status);
+       chooseStatusInTheBoardsFormNoTeam(board.getStatus());
 
     }
 
@@ -37,6 +41,10 @@ public class BoardHelper extends HalperBase {
 
     public boolean isBoardCreated(String boardName) {
         return isElementPresent(By.cssSelector(".board-tile-details [title="+boardName+"]"));
+    }
+
+    public boolean isAtLeastOneBoardPresent(){
+        return isElementPresent(By.xpath("//*[@class='icon-lg icon-member']/../../..//li[1]"));
     }
 
     public int boardCounter() {
@@ -75,4 +83,12 @@ public class BoardHelper extends HalperBase {
         driver.findElement(By.id("board")).click();
 
     }
+
+    public void ifThereIsNoBoardCreateOne() {
+        if (isAtLeastOneBoardPresent()){
+            String boardTitle="DutyBoard1";
+            createBoardNoTeam(boardTitle);
+        }
+    }
+
 }

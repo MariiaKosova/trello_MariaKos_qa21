@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.trello.qa.tests.BoardCreationTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2019-10-01T22:04:51" hostname="street" time="60.331">
+  <properties/>
+  <testcase name="cancellingDuringBoardCreation" classname="com.trello.qa.tests.BoardCreationTests" time="41.965"/>
+  <testcase name="createBoardFromBoardButtonNoTeam" classname="com.trello.qa.tests.BoardCreationTests" time="15.514"/>
+  <testcase name="creatingBoardWithPrivateAccess" classname="com.trello.qa.tests.BoardCreationTests" time="2.841"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
